@@ -1,0 +1,65 @@
+<!--
+  Generated template for the EnrollPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="nav">
+    <ion-title>Enroll</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="getIntro()">
+        	<ion-icon name="ios-arrow-down"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  		<ion-item class="bgtop">
+    		<ion-thumbnail item-start>
+      			<img src="assets/school.jpg">
+    		</ion-thumbnail>
+    			<h6>University of California, San Diego</h6>
+    			<h2>Data Structures and 
+    				Algorithms</h2>
+    			<h6>6 courses</h6>
+  		</ion-item>
+
+  		<ion-row>
+  		<ion-row>
+  			<ion-col col-auto>
+  				<h1>$49</h1>
+  			</ion-col>
+  		</ion-row>
+  			<h6>/Monthly</h6>
+  		</ion-row>
+  		
+      <div class="infoCourse">
+      <ion-row>
+        <ion-icon name="ios-checkmark-outline">
+  			 Practice materials
+  		  </ion-icon>
+      </ion-row>
+      <ion-row>
+        <ion-icon name="ios-checkmark-outline">
+          Practice materials
+        </ion-icon>
+      </ion-row>
+      <ion-row>
+        <ion-icon name="ios-checkmark-outline">
+          Practice materials
+        </ion-icon>
+      </ion-row>
+      </div>
+
+  		<div class="btn">
+  			<button ion-button full (click)="getEnroll()">Subscribe</button>
+  			<button ion-button full>Terms</button>
+  		</div>
+
+</ion-content>

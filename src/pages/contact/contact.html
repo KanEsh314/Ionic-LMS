@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="nav">
+    <ion-title text-center>Learning Management App</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <img src="assets/bgImg.jpg">
+    <ion-avatar>
+        <img src="assets/profile.jpg">
+    </ion-avatar>
+  </ion-item>
+
+  <ion-list>
+    <button ion-item (click)="getBadge()">Badge</button>
+    <button ion-item (click)="getScore()">Score</button>
+    <button ion-item (click)="getText()">My Messages</button>
+    <button ion-item (click)="getProfile()">Edit Profile</button>
+    <button ion-item (click)="getPassword()">Reset Password</button>
+  </ion-list>
+  
+</ion-content>

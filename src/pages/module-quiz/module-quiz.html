@@ -1,0 +1,33 @@
+<!--
+  Generated template for the ModuleQuizPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="nav" hideBackButton>
+  	<ion-buttons end (click)="back()">
+        <button ion-button icon-only>
+        	<ion-icon name="ios-arrow-down"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title>Quiz</ion-title>
+  </ion-navbar>
+  
+  <ion-toolbar>
+    <ion-title>Module 1 Quiz</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+    
+    <p>
+      To pass, answer at least 19 questions correctly,
+		  This quiz counts toward passing the course
+    </p>
+
+	<button ion-button block (click)="startQuiz()">Start Quiz</button>
+	
+</ion-content>

@@ -1,0 +1,43 @@
+<!--
+  Generated template for the PassPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="nav">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="back()">
+        <ion-icon name="ios-arrow-down"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Reset Password</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="passCss">
+
+  <ion-item>
+    <ion-input placeholder="Password" type="{{type}}" required pattern=".{4,10}" ([ngModel])="cpass"></ion-input>
+     <button *ngIf="!showPass" ion-button clear type="button" item-right (click)="showPasswordCurent()"><ion-icon name="ios-eye-off"></ion-icon></button>
+ 	<button *ngIf="showPass" ion-button clear type="button" item-right (click)="showPasswordCurent()"><ion-icon name="ios-eye"></ion-icon></button>
+  </ion-item>
+
+  <ion-item>
+    <ion-input placeholder="New Password" type="{{typeNew}}" required pattern=".{4,10}" ([ngModel])="npass"></ion-input>
+     <button *ngIf="!showPassNew" ion-button clear type="button" item-right (click)="showPasswordNew()"> <ion-icon name="ios-eye-off"></ion-icon></button>
+ 	<button *ngIf="showPassNew" ion-button clear type="button" item-right (click)="showPasswordNew()"> <ion-icon name="ios-eye"></ion-icon></button>
+  </ion-item>
+
+  <ion-item>
+    <ion-input placeholder="Confirm New Password" type="{{typeCNew}}" required pattern=".{4,10}" [(ngModel)]="cnpass"></ion-input>
+     <button *ngIf="!showPassCNew" ion-button clear type="button" item-right (click)="showPasswordCNew()"> <ion-icon name="ios-eye-off"></ion-icon></button>
+ 	<button *ngIf="showPassCNew" ion-button clear type="button" item-right (click)="showPasswordCNew()"> <ion-icon name="ios-eye"></ion-icon></button>
+  </ion-item>
+
+  <button ion-button block (click)="getUpPass()">Reset Password</button>
+
+</ion-content>

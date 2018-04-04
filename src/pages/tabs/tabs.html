@@ -1,0 +1,16 @@
+<ion-header>
+<ion-navbar color="nav" hideBackButton="true">
+	<ion-title text-start>Learning Management App</ion-title>
+	<ion-buttons end>
+        <button ion-button icon-only (click)="getLogin()">
+        	<ion-icon name="contact"></ion-icon>
+        </button>
+    </ion-buttons>
+</ion-navbar>
+</ion-header>
+
+<ion-tabs color="tab">
+  <ion-tab [root]="tab1Root" tabTitle="My Course" tabIcon="document"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Catalog" tabIcon="search"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="My Profile" tabIcon="person"></ion-tab>
+</ion-tabs>
