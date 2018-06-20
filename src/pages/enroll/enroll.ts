@@ -16,11 +16,13 @@ import { CourseTabsPage } from '../coursetabs/coursetabs';
 })
 export class EnrollPage {
 
+  enrolls = this.navParams.get('enroll');
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController) {
   }
 
   ionViewDidLoad() {
-    
+    console.log (this.enrolls);
   }
 
   getEnroll(){
@@ -29,6 +31,6 @@ export class EnrollPage {
 
   getIntro(){
   	this.viewCtrl.dismiss();
-  }
+   }
 
 }

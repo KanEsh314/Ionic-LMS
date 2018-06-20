@@ -11,32 +11,13 @@
 </ion-header>
 
 <ion-content>
-
-	<ion-item-divider>
-		WEEK 1
-	</ion-item-divider>
-
-	<ion-card>
-		<button ion-item (click)="getQuiz()">
-      		<h2>Module 1 Quiz</h2>
-      		<p>Graded Quiz.23 Question</p>
-    	</button>
-    	<ion-card-content>
-    		<ion-row>
-    			<ion-col text-center>
-    				<h2>Due</h2>
-    				<p>October 16</p>
-    			</ion-col>
-    			<ion-col text-center>
-    				<h2>Grade</h2>
-    				<p>-</p>
-    			</ion-col>
-    			<ion-col text-center>
-    				<h2>Passed</h2>
-    				<p>No</p>
-    			</ion-col>
-    		</ion-row>
-    	</ion-card-content>
-	</ion-card>
-
+	<ion-list *ngFor="let quiz of quizes" ion-item (click)="getQuiz(quiz)">
+		<ion-list-header>
+			WEEK {{quiz.quiz_week}}
+			<ion-note item-end>DUE {{quiz.quiz_due_date}}</ion-note>
+		</ion-list-header>
+		<ion-item>
+			{{quiz.quiz_name}}
+		</ion-item>
+	</ion-list>
 </ion-content>

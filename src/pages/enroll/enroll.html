@@ -17,49 +17,37 @@
 
 </ion-header>
 
-
 <ion-content padding>
 
   		<ion-item class="bgtop">
-    		<ion-thumbnail item-start>
-      			<img src="assets/school.jpg">
+    		<ion-thumbnail item-sta>
+          <img src="assets/school.jpg" style="float: left;">
     		</ion-thumbnail>
-    			<h6>University of California, San Diego</h6>
-    			<h2>Data Structures and 
-    				Algorithms</h2>
-    			<h6>6 courses</h6>
+        <h6 style="float: right;">{{enrolls.alumni}}</h6><br>
+        <h6 style="float: right;">{{enrolls.course_name}}</h6><br>
+        <h6 style="float: right;">6 Courses</h6>
   		</ion-item>
 
   		<ion-row>
   		<ion-row>
   			<ion-col col-auto>
-  				<h1>$49</h1>
+  				<h1>RM {{enrolls.price}}</h1>
   			</ion-col>
   		</ion-row>
-  			<h6>/Monthly</h6>
+  			<h6>/ Monthly</h6>
   		</ion-row>
   		
       <div class="infoCourse">
       <ion-row>
         <ion-icon name="ios-checkmark-outline">
-  			 Practice materials
+          {{enrolls.outline1}}
   		  </ion-icon>
-      </ion-row>
-      <ion-row>
-        <ion-icon name="ios-checkmark-outline">
-          Practice materials
-        </ion-icon>
-      </ion-row>
-      <ion-row>
-        <ion-icon name="ios-checkmark-outline">
-          Practice materials
-        </ion-icon>
       </ion-row>
       </div>
 
   		<div class="btn">
   			<button ion-button full (click)="getEnroll()">Subscribe</button>
   			<button ion-button full>Terms</button>
-  		</div>
+      </div>
 
 </ion-content>

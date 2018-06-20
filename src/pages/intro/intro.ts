@@ -31,8 +31,8 @@ export class IntroPage {
     this.viewCtrl.dismiss();
   }
 
-  getEnroll(){
-    this.modalCtrl.create(EnrollPage).present();
+  getEnroll(enroll){
+    this.modalCtrl.create(EnrollPage,{enroll: enroll}).present();
   }
 
 }

@@ -36,7 +36,7 @@ export class HttpProvider {
   }
 
   getModuleByUser(){
-    return this.http.get("https://agile-oasis-56071.herokuapp.com/api/user/course/1")
+    return this.http.get("https://agile-oasis-56071.herokuapp.com/api/user/course/31")  
     .map(res => res.json())
   }
 
@@ -44,4 +44,6 @@ export class HttpProvider {
     return this.http.get("https://agile-oasis-56071.herokuapp.com/api/user/course/module/1")
     .map(res => res.json())
   }
+
+  
 }

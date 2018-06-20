@@ -24,7 +24,7 @@
     <ion-card-content>
       <img src="{{intros.course_logo}}" width="150" height="150">
       <h2>{{intros.course_name}}</h2>
-      <p>Princeton University</p>
+      <p>{{intros.alumni}}</p>
     </ion-card-content>
 
     <ion-card-content>
@@ -34,25 +34,29 @@
     <ion-card-content>
       <ion-avatar class="profile-image">
         <img src="{{intros.course_logo}}">
-        <h2>Kanesh Arujunan</h2>
+        <br>
+        <h2 align="center">{{intros.tutor_name}}</h2>
       </ion-avatar>
     </ion-card-content>
-
+    
     <ion-card-content>
-      <ion-row>
+      <ion-item>
         <ion-col col-auto>
-          <h1>11</h1>
+          Video Duration:
         </ion-col>
-        <ion-col col-3>
-          <h4>Hours of Video</h4>
+        <ion-col>
+          {{intros.video_hour}}
         </ion-col>
+      </ion-item>
+      
+      <ion-item>
         <ion-col col-auto>
-          <h1>10</h1>
+          Number of Practice Quiz:
         </ion-col>
-        <ion-col col-3>
-          <h4>Practice Quizzes</h4>
+        <ion-col>
+          {{intros.practice_quiz}}
         </ion-col>
-      </ion-row>
+      </ion-item>
     </ion-card-content>
 
     <ion-card-header>
@@ -62,19 +66,19 @@
     <ion-card-content>
 
       <ion-list>
-        <button ion-item>
+        <ion-item>
           <ion-col col-auto>
             1
           </ion-col>
           <ion-col>
-            Course Introduction
+            {{intros.outline1}}
           </ion-col>  
-        </button>  
+        </ion-item>
       </ion-list>
 
     </ion-card-content>
       
   </ion-card>
 
-	<button ion-button block (click)="getEnroll()">Enroll</button>
+	<button ion-button block (click)="getEnroll(intros)">Enroll</button>
 </ion-content>

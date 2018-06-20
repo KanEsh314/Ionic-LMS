@@ -13,8 +13,8 @@
 
 	<ion-list *ngFor="let module of modules" (click)="getCourseIntro(module)">
   		<ion-list-header>
-    		WEEK 1
-    		<ion-note item-end>Due October 16</ion-note> 
+    		{{module.week}}
+    		<ion-note item-end>DUE {{module.due_date}}</ion-note> 
   		</ion-list-header>
   			<ion-item>
   				{{module.module_title}}

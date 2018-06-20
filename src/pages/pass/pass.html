@@ -17,11 +17,10 @@
 
 </ion-header>
 
-
 <ion-content padding class="passCss">
 
   <ion-item>
-    <ion-input placeholder="Password" type="{{type}}" required pattern=".{4,10}" ([ngModel])="cpass"></ion-input>
+    <ion-input placeholder="Old Password" type="{{type}}" required pattern=".{4,10}" ([ngModel])="cpass"></ion-input>
      <button *ngIf="!showPass" ion-button clear type="button" item-right (click)="showPasswordCurent()"><ion-icon name="ios-eye-off"></ion-icon></button>
  	<button *ngIf="showPass" ion-button clear type="button" item-right (click)="showPasswordCurent()"><ion-icon name="ios-eye"></ion-icon></button>
   </ion-item>

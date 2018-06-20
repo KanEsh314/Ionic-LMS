@@ -28,9 +28,8 @@ export class TextPage {
 
   getMessage(){
   	this.toastCtrl.create({
-  		message: "Your Message Has Been Send...",
+  		message: "Your Message Has Been Sent...",
   		duration: 5000
   	}).present();
   }
-
 }

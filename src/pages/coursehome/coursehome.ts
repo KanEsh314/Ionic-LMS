@@ -45,8 +45,7 @@ export class CoursehomePage {
     });
   }
 
-  getCourseIntro(module){
-  	this.modalCtrl.create(CourseIntroPage,{ module:module}).present();
-  }
-  
+  getCourseIntro(grades){
+  	this.modalCtrl.create(CourseIntroPage,{ grades:grades}).present();
+  }  
 }

@@ -17,7 +17,7 @@ import { HttpProvider } from '../../providers/http/http';
 })
 export class CourseIntroPage {
 
-  module = this.navParams.get('module');
+  module = this.navParams.get('grades');
   //lessons : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public httpService: HttpProvider, public modalCtrl: ModalController) {

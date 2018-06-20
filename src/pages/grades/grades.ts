@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { ModuleQuizPage } from '../module-quiz/module-quiz'; 
+import { IonicPage, NavController, NavParams , ModalController , ViewController, LoadingController, AlertController} from 'ionic-angular';
+import { ModuleQuizPage } from '../module-quiz/module-quiz';
+import { HttpProvider } from '../../providers/http/http';
+
 /**
  * Generated class for the GradesPage page.
  *
@@ -15,15 +17,35 @@ import { ModuleQuizPage } from '../module-quiz/module-quiz';
 })
 export class GradesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
+  quizes : any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl:ViewController, public httpService: HttpProvider, public alertCtrl: AlertController, public loadCtrl: LoadingController) {
+
   }
 
   ionViewDidLoad() {
-    
+
+    let load = this.loadCtrl.create({
+      content: 'Please Wait'
+    });
+    load.present();
+
+    this.httpService.getModuleByUser().subscribe((data) => {
+    	this.quizes = data.data;
+    	console.log(this.quizes);
+      load.dismiss();
+    }, (err) => {
+    	console.log(err);
+      load.dismiss();
+      this.alertCtrl.create({
+        title: 'Internet Connection Error',
+         message: 'Please Connect To Working Internet Connection',
+         buttons: ['OK']
+      }).present();
+    });
   }
 
-  getQuiz(){
+  getQuiz(modulequiz){
   	this.modalCtrl.create(ModuleQuizPage).present();
   }
-
 }

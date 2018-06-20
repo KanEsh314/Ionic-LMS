@@ -20,7 +20,6 @@ export class ModuleQuizPage {
   }
 
   ionViewDidLoad() {
-
   }
 
   back(){
