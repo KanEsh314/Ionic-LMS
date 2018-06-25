@@ -46,6 +46,6 @@ export class CoursehomePage {
   }
 
   getCourseIntro(grades){
-  	this.modalCtrl.create(CourseIntroPage,{ grades:grades}).present();
+  	this.modalCtrl.create(CourseIntroPage,{grades:grades}).present();
   }  
 }

@@ -36,7 +36,7 @@ export class LoginPage {
   }
 
   getAuth(){
-  	this.navCtrl.push(TabsPage,);
+  	this.navCtrl.push(TabsPage);
   }
 
   getRegister(){

@@ -5,12 +5,12 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-toolbar>
-    
+  <ion-toolbar>    
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
 	<ion-list *ngFor="let quiz of quizes" ion-item (click)="getQuiz(quiz)">
 		<ion-list-header>
 			WEEK {{quiz.quiz_week}}
@@ -20,4 +20,5 @@
 			{{quiz.quiz_name}}
 		</ion-item>
 	</ion-list>
+	
 </ion-content>
