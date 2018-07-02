@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams , LoadingController , AlertController, Loading} from 'ionic-angular';
+import { IonicPage, NavController, LoadingController, NavParams , AlertController, Loading} from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { HttpProvider } from '../../providers/http/http';
 import { TabsPage } from '../tabs/tabs';
+import { LoginPage } from '../login/login';
 /**
  * Generated class for the RegisterPage page.
  *
@@ -25,10 +26,11 @@ export class RegisterPage {
   email = '';
   countryid = '';
 
-  public loading : Loading;
+  //public loading : Loading;
+  loading: any;
+  //regData = { email:'', password:'' };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public authServices: AuthProvider, public httpServices: HttpProvider, public alertCtrl: AlertController) {
-  
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public authProvider: AuthProvider, public httpServices: HttpProvider, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -54,10 +56,11 @@ export class RegisterPage {
       country_id : this.countryid
     };
 
-    this.authServices.createAccount(details).then((result) => {
+    //register
+    this.authProvider.createAccount(details).then((result) => {
         console.log(result);
         this.loading.dismiss().then(() => {
-          this.navCtrl.setRoot(TabsPage);
+          this.navCtrl.push(LoginPage); //TabsPage
         });
     }, (err) => {
         this.loading.dismiss().then(() => {
@@ -72,10 +75,16 @@ export class RegisterPage {
 
     console.log(details);
 
+    //showLoader
     this.loading = this.loadingCtrl.create({
-          dismissOnPageChange: true,
-        });
-        this.loading.present();
-
+      //dismissOnPageChange: true,
+      content: 'Registering...'
+    });
+    this.loading.present();
+    this.alertCtrl.create({
+      title: 'Registration Successful',
+      subTitle: 'Please Login!',
+      buttons: ['OK']
+    }).present();
   }
 }

@@ -17,6 +17,7 @@ export class AuthProvider {
     //console.log('Hello AuthProvider Provider');
   }
 
+  //register
   createAccount(details){
    
   	return new Promise((resolve, reject) => {
@@ -36,6 +37,28 @@ export class AuthProvider {
   		reject(err);
   	});
   });
+}
+
+//login
+login(details){
+   
+  return new Promise((resolve, reject) => {
+
+  let headers = new Headers();
+  headers.append('Content-Type','application/json');
+
+  this.http.post('https://agile-oasis-56071.herokuapp.com/api/login', JSON.stringify(details), {headers: headers})
+  .subscribe(res => {
+
+    let data = res.json();
+    this.token = data.token;
+    this.storage.set('token',data.token);
+    resolve(data);
+  
+  }, (err) => {
+    reject(err);
+  });
+});
 }
 
   checkAuthentication(){
