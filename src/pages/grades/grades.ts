@@ -45,7 +45,7 @@ export class GradesPage {
     });
   }
 
-  getQuiz(modulequiz){
+  getQuiz(){
   	this.modalCtrl.create(ModuleQuizPage).present();
   }
 }
