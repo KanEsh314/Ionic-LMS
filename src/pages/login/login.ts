@@ -75,7 +75,7 @@ export class LoginPage {
       dismissOnPageChange: true
     });
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+      console.log('Dismissed Toast');
     });
     toast.present();
   }

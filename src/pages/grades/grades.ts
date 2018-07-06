@@ -30,7 +30,7 @@ export class GradesPage {
     });
     load.present();
 
-    this.httpService.getModuleByUser().subscribe((data) => {
+    this.httpService.getQuizByCourse().subscribe((data) => {
     	this.quizes = data.data;
     	console.log(this.quizes);
       load.dismiss();

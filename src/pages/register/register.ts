@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, LoadingController, NavParams , AlertController, Loading} from 'ionic-angular';
+import { IonicPage, NavController, NavParams , LoadingController , AlertController, Loading} from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { HttpProvider } from '../../providers/http/http';
-import { TabsPage } from '../tabs/tabs';
 import { LoginPage } from '../login/login';
 /**
  * Generated class for the RegisterPage page.
@@ -20,17 +19,16 @@ export class RegisterPage {
 
   usersreg : any;
 
-  fname = '';
-  lname = '';
+  first_name = '';
+  last_name = '';
   password = '';
   email = '';
-  countryid = '';
+  country_id = '';
 
-  //public loading : Loading;
-  loading: any;
-  //regData = { email:'', password:'' };
+  public loading : Loading;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public authProvider: AuthProvider, public httpServices: HttpProvider, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public authServices: AuthProvider, public httpServices: HttpProvider, public alertCtrl: AlertController) {
+  
   }
 
   ionViewDidLoad() {
@@ -49,18 +47,17 @@ export class RegisterPage {
   postregistered(){
 
     let details = {
-      first_name : this.fname,
-      last_name : this.lname,
+      first_name : this.first_name,
+      last_name : this.last_name,
       password : this.password,
       email : this.email,
-      country_id : this.countryid
+      country_id : this.country_id
     };
 
-    //register
-    this.authProvider.createAccount(details).then((result) => {
+    this.authServices.createAccount(details).then((result) => {
         console.log(result);
         this.loading.dismiss().then(() => {
-          this.navCtrl.push(LoginPage); //TabsPage
+          this.navCtrl.setRoot(LoginPage);
         });
     }, (err) => {
         this.loading.dismiss().then(() => {
@@ -75,16 +72,10 @@ export class RegisterPage {
 
     console.log(details);
 
-    //showLoader
     this.loading = this.loadingCtrl.create({
-      //dismissOnPageChange: true,
-      content: 'Registering...'
-    });
-    this.loading.present();
-    this.alertCtrl.create({
-      title: 'Registration Successful',
-      subTitle: 'Please Login!',
-      buttons: ['OK']
-    }).present();
+          dismissOnPageChange: true,
+        });
+        this.loading.present();
+
   }
 }

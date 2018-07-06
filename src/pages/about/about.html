@@ -16,7 +16,19 @@
       </ion-refresher-content>
     </ion-refresher>
 
-    <ion-searchbar (input)="searchItem($event)"></ion-searchbar>
+    <!--<ion-searchbar (input)="searchItem($event)"></ion-searchbar>-->
+    <!-- <ion-searchbar
+      [(ngModel)]="searchTerm"
+      [showCancelButton]="true"
+      (ionInput)="setFilteredItems($event)"
+    >
+    </ion-searchbar> -->
+
+    <ion-searchbar
+      [(ngModel)]="searchTerm"
+      [showCancelButton]="true"
+      (ionInput)="searchItems($event)">
+    </ion-searchbar>
 
   	<ion-list *ngFor = "let course of courses">
         <h6>{{course.course_name}}</h6>

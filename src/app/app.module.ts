@@ -7,6 +7,8 @@ import { Ionic2RatingModule } from 'ionic2-rating';
 
 
 import { AboutPage } from '../pages/about/about';
+import { CategoryPage } from '../pages/category/category';
+import { CategoryCoursePage } from '../pages/categorycourse/categorycourse';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -43,6 +45,8 @@ import { FlashCardComponent } from '../components/flash-card/flash-card';
   declarations: [
     MyApp,
     AboutPage,
+    CategoryPage,
+    CategoryCoursePage,
     ContactPage,
     HomePage,
     TabsPage,
@@ -79,6 +83,8 @@ import { FlashCardComponent } from '../components/flash-card/flash-card';
   entryComponents: [
     MyApp,
     AboutPage,
+    CategoryPage,
+    CategoryCoursePage,
     ContactPage,
     HomePage,
     TabsPage,

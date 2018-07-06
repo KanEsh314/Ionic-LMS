@@ -16,9 +16,10 @@
 <ion-content padding>
 
 	<ion-item>
-      <ion-input type="email" placeholder="Email"></ion-input>
-    </ion-item>
-    <button ion-button block (click)="getReset()">Reset</button>
-    <button ion-button block (click)="getCancel()">Cancel</button>
+    <ion-input [(ngModel)]="email" type="email" placeholder="Email"></ion-input>
+  </ion-item>
+  
+  <button ion-button block (click)="getReset()">Send New Password</button>
+  <button ion-button block (click)="getCancel()">Cancel</button>
 
 </ion-content>

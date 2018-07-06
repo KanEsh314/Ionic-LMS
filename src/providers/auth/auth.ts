@@ -11,10 +11,14 @@ import { Storage } from '@ionic/storage';
 @Injectable()
 export class AuthProvider {
 
+  // courses: any;
 	public token : any;
 
   constructor(public http: Http, public storage: Storage) {
     //console.log('Hello AuthProvider Provider');
+    // this.courses = [
+    //   {course_name: this.courses}
+    // ]
   }
 
   //register
@@ -61,6 +65,26 @@ login(details){
 });
 }
 
+reset(details){
+  return new Promise((resolve, reject) => {
+
+  	let headers = new Headers();
+  	headers.append('Content-Type','application/json');
+
+  	this.http.post('https://agile-oasis-56071.herokuapp.com/api/reset', JSON.stringify(details), {headers: headers})
+  	.subscribe(res => {
+
+  		let data = res.json();
+  		this.token = data.token;
+  		this.storage.set('token',data.token);
+  		resolve(data);
+  	
+  	}, (err) => {
+  		reject(err);
+  	});
+  });
+}
+
   checkAuthentication(){
 
     return new Promise((resolve,reject) => {
@@ -101,5 +125,13 @@ login(details){
       });
     });
   }
+
+  
+
+  // filterItems(searchTerm) {
+  //   return this.courses.filter((course) => {
+  //     return course.course_name.indexOf(searchTerm) > -1;
+  //   });
+  // }
 
 }

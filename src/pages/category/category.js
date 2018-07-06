@@ -8,31 +8,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
-import { HomePage } from '../home/home';
-import { CategoryPage } from '../category/category';
-//import { CourseTabsPage } from '../coursetabs/coursetabs';
-import { LoginPage } from '../login/login';
-var TabsPage = (function () {
-    function TabsPage(navCtrl) {
+import { NavController, ModalController } from 'ionic-angular';
+import { CategoryCoursePage } from '../categorycourse/categorycourse';
+var CategoryPage = (function () {
+    function CategoryPage(navCtrl, modalCtrl) {
         this.navCtrl = navCtrl;
-        this.tab1Root = HomePage;
-        this.tab2Root = CategoryPage;
-        this.tab3Root = AboutPage;
-        this.tab4Root = ContactPage;
+        this.modalCtrl = modalCtrl;
     }
-    TabsPage.prototype.getLogin = function () {
-        this.navCtrl.setRoot(LoginPage);
+    CategoryPage.prototype.getInformation = function () {
+        this.modalCtrl.create(CategoryCoursePage);
     };
-    return TabsPage;
+    return CategoryPage;
 }());
-TabsPage = __decorate([
+CategoryPage = __decorate([
     Component({
-        templateUrl: 'tabs.html'
+        selector: 'page-category',
+        templateUrl: 'category.html'
     }),
-    __metadata("design:paramtypes", [NavController])
-], TabsPage);
-export { TabsPage };
-//# sourceMappingURL=tabs.js.map
+    __metadata("design:paramtypes", [NavController, ModalController])
+], CategoryPage);
+export { CategoryPage };
+//# sourceMappingURL=category.js.map

@@ -9,6 +9,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
+import { CategoryPage } from '../pages/category/category';
+import { CategoryCoursePage } from '../pages/categorycourse/categorycourse';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -31,6 +33,8 @@ AppModule = __decorate([
         declarations: [
             MyApp,
             AboutPage,
+            CategoryPage,
+            CategoryCoursePage,
             ContactPage,
             HomePage,
             TabsPage,
@@ -50,6 +54,8 @@ AppModule = __decorate([
         entryComponents: [
             MyApp,
             AboutPage,
+            CategoryPage,
+            CategoryCoursePage,
             ContactPage,
             HomePage,
             TabsPage,

@@ -43,7 +43,20 @@ export class HttpProvider {
   getLessonById(){
     return this.http.get("https://agile-oasis-56071.herokuapp.com/api/user/course/module/1")
     .map(res => res.json())
+  } 
+  
+  getQuizByCourse(){
+    return this.http.get("https://agile-oasis-56071.herokuapp.com/api/user/course/31/quiz")
+    .map(res => res.json())
+  }  
+
+  getCategory(){
+    return this.http.get("https://agile-oasis-56071.herokuapp.com/api/course-categories")
+    .map(res => res.json())
   }
 
-  
+  getCourseByCategory(){
+    return this.http.get("https://agile-oasis-56071.herokuapp.com/api/category/1/course")
+    .map(res => res.json())
+  }
 }
